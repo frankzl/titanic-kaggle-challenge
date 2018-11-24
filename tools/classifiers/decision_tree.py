@@ -3,9 +3,9 @@ from .classifier import Classifier
 
 class DecisionTree (Classifier):
 
-    def __init__(self, features):
+    def __init__(self, features, max_depth=None):
         self.features = features
-        self.model = DecisionTreeClassifier()
+        self.model = DecisionTreeClassifier(max_depth = max_depth)
 
     def train(self, data, labels):
         super().train(data, labels)
